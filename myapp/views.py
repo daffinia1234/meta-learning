@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from myapp.forms import NewProperty
+from myapp.forms import NewProperty, PropertyForm
 
 # Create your views here for menu.
 def about(request):
@@ -11,11 +11,12 @@ def menu(request):
     return render(request, "menu.html", {'content': about_content})
 
 def form_view(request):
-    propertyObject=NewProperty()
+    propertyObject=PropertyForm()
     if request.method=='POST':
-        propertyObject=NewProperty(instance=request.post)
+        propertyObject=PropertyForm(request.POST)
         if propertyObject.is_valid():
             propertyObject.save()
     context={'form':propertyObject}
+
     return render(request,'property.html',context)
 

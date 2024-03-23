@@ -55,7 +55,7 @@ ROOT_URLCONF = 'chefsTable.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['chefsTable/templates'],
+        'DIRS': ['chefsTable/chefsTable/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

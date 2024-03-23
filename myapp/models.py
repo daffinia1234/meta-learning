@@ -16,5 +16,6 @@ class NewProperty(models.Model):
     property_type=models.CharField(max_length=20, choices=types)
     posted_date=models.DateField(auto_now=True)
     contact=models.IntegerField()
+    test = models.IntegerField()
 
 
