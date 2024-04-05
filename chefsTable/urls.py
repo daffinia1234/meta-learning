@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #localhost.com/myapp/any-urls
     path('', include('myapp.urls')),
+    path('',include('Test.urls')),
 ]

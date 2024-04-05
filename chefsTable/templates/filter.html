@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property</title>
+</head>
+<body>
+    <p> Hello </p>
+    <form action="{% url 'property' %}" method="get">
+        {%csrf_token%}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+       
+    </form>
+    <ul>
+        {% for pro in property %}
+        <li>{{pro.location}} - {{pro.name}} {{pro.price_per_sqft}}-</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
